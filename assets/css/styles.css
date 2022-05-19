@@ -714,6 +714,10 @@ of an element with name1[.skills__close] */
   color: var(--first-color);
 }
 
+.qualification__button-active{
+  box-shadow: 2px 2px 10px gold;
+}
+
 .qualification__icon {
   font-size: 1.8rem;
   margin-right: var(--mb-0-25);
