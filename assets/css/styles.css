@@ -1,0 +1,1575 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*==================== VARIABLES CSS ====================*/
+/* Selects the document's root element = <html> element */
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  /* Change favorite color */
+  /* hue is a degree on the color wheel from 0 to 360 */
+  /* like a variable */
+  --hue-color: 228; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL = 
+  Hue, Saturation and Luminance (or brightness) color mode } its color space defines colors more naturally 
+  (one base color, saturation of color, bightness of color)
+  To change color just change the first value 
+  */
+
+  /* hsl color mode - base color, saturation, lightness (if low = dark)*/
+  --blob-color: hsl(var(--hue-color), 75%, 46%);
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 69%, 63%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 99%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  /* rem -> Root em (html, body) */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+  /* -------------------------- */
+  --text-shadow: #00DDFF; 
+}
+
+/* Font size for large devices,
+ min-width: if content is greater than or equal to the specified width 
+ max-width: if content is less than or equal to the specified width  
+ */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========== Variables Dark theme ==========*/
+/* Selects all <body> elements with class="intro" */
+body.dark-theme {
+  /* HSL COLOR MODE - from above } changed values */
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  --text-shadow: black; 
+}
+
+/*========== Button Dark/Light ==========*/
+.nav__btns {
+  display: flex;
+  align-items: center;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-right: var(--mb-1);
+  cursor: pointer;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/*==================== BASE ====================*/
+/* selects all elements */
+* {
+  /*
+    box-sizing: Defines how the width and height of an element are calculated: should they include padding and borders, or not
+    By default, the width and height of an element is calculated like this:
+
+    width + padding + border = actual width of an element
+    height + padding + border = actual height of an element
+
+    If you set box-sizing: border-box; on an element, padding and border are included in the width and height:
+    So basically: by default it will only add padding: if it is specified 
+
+    with box-sizing: border-box it will add automatically event if it is not specified as a css property 
+  */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* property -> specifies the scroll-behaviour of a scroll box, if scroll event result through navigation or CSSOM API's */
+  /* smooth = reibungslos */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+/* // will be applied for every h1 ... tag/ but dont forget scopes */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  /* height: auto; 
+  It is used to set height property to its default value.
+    If the height property set to auto then the browser calculates the height of element */
+  height: auto;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+}
+
+.section__subtitle {
+  /* displayed as block element, like paragraphs and headers, has some whitespace above and below it */
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+/* combiner selector */
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/*==================== LAYOUT ====================*/
+.container {
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid {
+  /* An HTML element becomes a grid container when its display property is set to grid or inline-grid. */
+  display: grid;
+  /* shorthand css property for grid-row-gap, grid-column-gap */
+  gap: 1.5rem;
+}
+
+.header {
+  /* position bottom left corner  */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+/*==================== NAV ====================*/
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: flex;
+  /* The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally). */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav_toogle {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav_logo:hover {
+  color: var(--first-color);
+}
+
+.nav__toggle {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav__toggle:hover {
+  color: var(--first-color);
+}
+
+@media screen and (max-width: 767px) {
+  /* only accessible if screen is smaller max-width */
+  .nav__menu {
+    position: fixed;
+    /* it will hide the nav_menu */
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    /* round corners */
+    border-radius: 1.5rem 1.5rem 0 0;
+
+    /* CSS transitions allows you to change property values smoothly, over a given duration.  */
+    transition: 0.3s;
+  }
+}
+
+.nav__list {
+  /* The grid-template-columns property specifies the number (and the widths) of columns in a grid layout. 
+    The values are a space separated list, where each value specifies the size of the respective column. */
+
+  /* The repeat() CSS function represents a repeated fragment of the track list,
+     allowing a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form. */
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav__link {
+  /* # for the individual links inside the nav menu */
+  display: flex;
+  /* vertical = make icon on top of the a text */
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+.nav__icon {
+  font-size: 1.2rem;
+}
+
+/* move the close icon right */
+.nav__close {
+  /* Absolute - the element is positioned absolutely to its first positioned parent */
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.5rem;
+  font-size: 1.5rem;
+  /* hand */
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.nav_close:hover {
+  color: var(--first-color-alt);
+}
+
+/* show menu */
+.show-menu {
+  bottom: 0;
+}
+
+/* Active link */
+.active-link {
+  color: var(--first-color);
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 -1px 4px rgba(0, 0 0, 0.15);
+}
+
+/*==================== HOME ====================*/
+.home__container {
+  gap: 1rem;
+}
+
+.home__content {
+  /* A fraction or 1FR is one part of the whole. 1 fraction is 100% of the available space */
+  grid-template-columns: 0.5fr 3fr;
+  padding-top: 3.5rem;
+  align-items: center;
+}
+
+.home__social {
+  display: grid;
+  /* Sets the size of each column to depend on the largest item in the column	 */
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+}
+
+.home__social-icon {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.home__social-icon:hover {
+  color: var(--first-color-alt);
+}
+
+.home__blob {
+  width: 200px;
+  /* // it will fill the svg  */
+  fill: var(--blob-color);
+}
+
+.home__blob-img {
+  width: 170px;
+
+}
+
+.home__data {
+  /* The grid-column CSS shorthand property specifies a grid item's size and location within a grid column by
+     contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and 
+     inline-end edge of its grid area. */
+  grid-column: 1/3;
+  animation: moveInLeft 3s; 
+}
+
+.home__title {
+  border-radius: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: var(30px);
+  background: -webkit-linear-gradient(#16BFFD,#CB3066);
+  /* clip all the background except for the area behnind  the text */
+  -webkit-background-clip: text;
+  /* make the text transparent so the background can gleam */
+  -webkit-text-fill-color: transparent; 
+
+  animation: changingTextGradient 3s linear infinite alternate;
+}
+
+.home__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-75);
+}
+
+.home__description {
+  margin-bottom: var(--mb-2);
+}
+
+.home__scroll {
+  /* // hide the button */
+  display: none;
+}
+
+.home__scroll-button {
+  color: var(--first-color);
+  transition: 0.3s;
+}
+
+.home__scroll-button:hover {
+  /* The transform property applies a 2D or 3D transformation to an element. 
+  This property allows you to rotate, scale, move, skew, etc., elements */
+
+  /* The translateY() CSS function repositions an element vertically on the 2D plane */
+  transform: translateY(0.25rem);
+}
+
+.home__scroll-mouse {
+  font-size: 2rem;
+}
+
+.home__scroll-name {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-right: var(--mb-0-25);
+}
+
+.home__scroll-arrow {
+  font-size: 1.25rem;
+}
+/*==================== BUTTONS ====================*/
+
+.button {
+  /* make anchor tags to button */
+  display: inline-block;
+  background-color: var(--first-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.button__icon {
+  font-size: 1.25rem;
+  margin-left: var(--mb-0-5);
+  transition: 0.3s;
+}
+
+.button--white {
+  background-color: #fff;
+  color: var(--first-color);
+}
+
+.button--white:hover {
+  background-color: #fff;
+}
+
+.button--flex {
+  /* The inline version of flex allows the element, and it's children, 
+    to have flex properties while still remaining in the regular flow of the document/webpage
+    for transform vertical 
+    */
+  display: inline-flex;
+  align-content: center;
+}
+
+.button--small {
+  padding: 0.75rem 1rem;
+}
+
+.button--link {
+  padding: 0;
+  background-color: transparent;
+  color: var(--first-color);
+}
+
+.button--link:hover {
+  background-color: transparent;
+  color: var(--first-color-alt);
+}
+
+/*==================== ABOUT ====================*/
+.about__img {
+  width: 200px;
+  border-radius: 0.5rem;
+  /* The CSS justify-self property sets the way a box is justified inside its alignment container along the appropriate axis. */
+
+  justify-self: center;
+  align-self: center;
+}
+.about__description {
+  text-align: center;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info {
+  display: flex;
+  /* same space between the items */
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.about__info-name {
+  font-size: var(--smaller-font-size);
+}
+
+.about__info-title,
+.about__info-name {
+  display: block;
+  text-align: center;
+}
+
+.about__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/*==================== SKILLS ====================*/
+
+.skills__container {
+  row-gap: 0;
+}
+
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2-5);
+  cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.skills__icon {
+  margin-right: var(--mb-0-75);
+}
+
+.skills__title {
+  font-size: var(--h3-font-size);
+}
+
+.skills__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.skills__list {
+  /* gap between each skill */
+  row-gap: 1.5rem;
+  padding-left: 2.7rem;
+}
+
+/* // skills name plus number */
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mb-0-5);
+}
+
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+/* span as horizontal rule */
+.skills__bar,
+.skills__percentage {
+  height: 5px;
+  border-radius: 0.25rem;
+}
+
+.skills__bar {
+  /* background of bar */
+  background-color: var(--first-color-lighter);
+}
+
+.skills__percentage {
+  /* shows prograss of bar */
+  display: block;
+  background-color: var(--first-color);
+}
+
+/* --------------------------- // ACCORDION SKILLS ---------------------------  */
+/* ---------------------- SKILLS BAR FRONTENT ---------------------- */
+.skills__html {
+  /* access horizontal rule and make width smaller */
+  width: 90%;
+}
+
+.skills__css {
+  /* access horizontal rule and make width smaller */
+  width: 80%;
+}
+
+.skills__js {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+
+.skills__react {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+
+/* ---------------------- SKILLS BAR BACKEND ---------------------- */
+.skills__typescript {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+
+.skills__node {
+  /* access horizontal rule and make width smaller */
+  width: 90%;
+}
+
+.skills__mongo{
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+
+.skills__python {
+  /* access horizontal rule and make width smaller */
+  width: 80%;
+}
+
+/* ---------------------- SKILLS BAR DESIGN ---------------------- */
+.skills__figma {
+  /* access horizontal rule and make width smaller */
+  width: 90%;
+}
+
+.skills__photoshop {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+
+/* ---------------------- SKILLS BAR Mobile Development ---------------------- */
+
+.skills__swift{
+  width: 35%; 
+}
+.skills__react-native{
+  width: 30%; 
+}
+
+
+/* Selects all elements with name2[.skills__list] that is a descendant 
+of an element with name1[.skills__close] */
+.skills__close .skills__list {
+  height: 0;
+  /* The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area. */
+  /* hidden - The overflow is clipped, and the rest of the content will be invisible
+  BECAUSE HEIGHT: 0 */
+  overflow: hidden;
+}
+
+/* The max-content sizing keyword represents the intrinsic maximum width
+ or height of the content. For text content this means that the content
+  will not wrap at all even if it causes overflows. */
+.skills__open .skills__list {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+}
+
+.skills__open .skills__arrow {
+  /* close arrow */
+  transform: rotate(-180deg);
+}
+
+
+
+
+/* =================== QUALIFICATION ====================*/
+
+.qualification__tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2);
+}
+
+.qualification__button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.qualification__button:hover {
+  color: var(--first-color);
+}
+
+.qualification__icon {
+  font-size: 1.8rem;
+  margin-right: var(--mb-0-25);
+}
+
+.qualification__data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.qualification__subtitle {
+  display: inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.qualificaton__calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.qualification__rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.qualification__line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  /* The transform CSS property lets you rotate, scale, skew, or translate an element.
+   It modifies the coordinate space of the CSS visual formatting model */
+  transform: translate(6px, -7px);
+}
+
+/* [attribute], display none all childs from [data-content] attribute */
+.qualification [data-content] {
+  display: none;
+}
+
+/* Selects all elements with both name1 and name2 set within its class attribute */
+.qualification__active[data-content] {
+  display: block;
+}
+
+/*==================== SERVICES ====================*/
+.services__container {
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.services__content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.services__content:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.services__icon {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-bottom: var(--mb-1);
+}
+
+.services__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  font-weight: var(--font-medium);
+}
+
+.services__button {
+  cursor: pointer;
+  font-size: var(--small-font-size);
+}
+
+.services__button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
+/* like big shadow */
+.services__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: var(--z-modal);
+  /* hidden because the shadow and box should only appear if view More */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+/* creates white box in the shadow */
+.services__modal-content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.services__modal-services {
+  row-gap: 1rem;
+}
+
+.services__modal-service {
+  /* flex = flexbox */
+  display: flex;
+}
+
+.services__modal-title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1-5);
+}
+
+/* position cross top right corner */
+.services__modal-close {
+  /* relative to parent element --> services__modal-content */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.services__modal-icon {
+  color: var(--first-color);
+  margin-right: var(--mb-0-25);
+}
+
+/* Active Modal */
+
+.active-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*==================== PORTFOLIO ====================*/
+.portfolio__container {
+  /* If overflow is clipped, a scroll-bar should be added to see the rest of the content.
+  Play it » initial. Sets this property to its default value. */
+  overflow: initial;
+}
+
+.portfolio__content {
+  padding: 0 1.5rem;
+}
+
+.portfolio__img {
+  width: 265px;
+  border-radius: 0.5rem;
+  /* The items are packed flush to each other toward the center
+   of the of the alignment container. */
+
+  /* The CSS justify-self property sets the way a box is
+    justified inside its alignment container along the appropriate axis. */
+  justify-self: center;
+}
+
+.portfolio__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description {
+  margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
+/* Insert something after the content of each <p> element */
+
+/* / it will somehow remove the default arrows of slider */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  /* it will add/ remove content */
+  content: "";
+}
+
+.swiper-portfolio-icon {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.swiper-button-prev {
+  /* move it left */
+  left: -0.5rem;
+}
+
+.swiper-button-next {
+  /* move it right  */
+  right: -0.5rem;
+}
+
+/* selects all [name2] elements where the parent is a [name1] element */
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  /* // move it down  */
+  bottom: -2.5rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--first-color);
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet {
+  /* Das outline CSS Eigenschaftskürzel (en-US) setzt alle 
+  outline Eigenschaften in einer einzigen Deklaration. 
+  outline: thick double #32a1ce;
+  */
+  outline: none;
+}
+
+/*==================== PROJECT IN MIND ====================*/
+.project {
+  text-align: center;
+}
+
+.project__bg {
+  background-color: var(--first-color-second);
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.project__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-0-75);
+}
+
+.project__description {
+  margin-bottom: var(--mb-1-5);
+}
+
+.project__title,
+.project__description {
+  color: #fff;
+}
+
+.project__img {
+  width: 232px;
+  justify-self: center;
+}
+
+/*==================== TESTIMONIAL ====================*/
+/* inside testimonial content/ for each testimimonial */
+.testimonial__data,
+.testimonial__header {
+  /* make it horizontal */
+  display: flex;
+}
+
+.testimonial__data {
+  /* between testimonial header and assessment */
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+}
+
+/* make circular image  */
+.testimonial__img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: var(--mb-0-75);
+}
+
+.testimonial__name {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.testimonial__client {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.testimonial__description {
+  margin-bottom: var(--mb-2-5);
+}
+
+.testimonial__icon-star {
+  color: var(--first-color);
+}
+
+.swiper-container .swiper-pagination-testimonial {
+  bottom: 0;
+}
+
+/*==================== CONTACT ME ====================*/
+.contact__container {
+  row-gap: 3rem;
+}
+
+.contact__information {
+  margin-bottom: var(--mb-2);
+}
+
+.contact__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.contact__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact__content {
+  background-color: var(--input-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.contact__label {
+  font-size: var(--smaller-font-size);
+  color: var(--title-color);
+}
+
+.contact__input {
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+  border: none;
+  /* An outline is a line drawn outside the element's border. */
+
+  outline: none;
+  padding: 0.25rem 0.5rem 0.5rem 0;
+}
+
+/*==================== FOOTER ====================*/
+.footer {
+  padding-top: 2rem;
+}
+
+.footer__container {
+  row-gap: 3.5rem;
+}
+
+.footer__bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__link:hover {
+  color: var(--first-color-lighter);
+}
+.footer__social {
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer__social:hover {
+  color: var(--first-color-lighter);
+}
+
+/* div where copyright */
+.footer__copy {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+/* // change footer color to white */
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social {
+  color: #fff;
+}
+
+/*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  /* // hide scroll-up */
+  bottom: -20%;
+  background-color: var(--first-color);
+  /* describes the transparency-level => 1 is not transparent, 50% see through */
+  opacity: 5;
+  padding: 0 0.3rem;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
+
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Show scroll */
+.show-scroll {
+  /* // make it from bottom 5rem up */
+  bottom: 5rem;
+}
+
+/*========== SCROLL BAR ==========*/
+/* ::-webkit-scrollbar — the entire scrollbar. */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+/* ::-webkit-scrollbar-thumb — the draggable scrolling handle. */
+
+/* WebKit is widely used as a web rendering engine by applications 
+present on almost all popular PC platforms including Windows,
+ Mac OS X, as well as mobile platforms such as iOS and Android. */
+/* webkit works for safari */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color-light);
+}
+
+/* ::- */
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .nav__menu {
+    padding: 2rem 0.25rem 4rem;
+  }
+
+  .nav__list {
+    column-gap: 0;
+  }
+
+  .home__content {
+    grid-template-columns: 0.25fr 3fr;
+  }
+
+  .home__blob {
+    width: 180px;
+  }
+
+  .skills__title {
+    font-size: var(--normal-font-size);
+  }
+
+  .qualification__data {
+    gap: 0.5rem;
+  }
+
+  .services__container {
+    /* take so much space as it possible can? */
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+
+  .services__content {
+    padding-right: 3.5rem;
+  }
+  /* // contains the modal content */
+  .services__modal {
+    padding: 0 0.5rem;
+  }
+
+  .project__img {
+    width: 200px;
+  }
+
+  .testimonial__data,
+  .testimonial__header {
+    /* vertical */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__img {
+    margin-right: 5;
+    margin-bottom: var(--mb-0-25);
+  }
+
+  .testimonial__data,
+  .testimonial__description {
+    text-align: center;
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  .home__content {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+
+  .home__data {
+    /* The grid-column property specifies a grid item's size and 
+    location in a grid layout, and is a shorthand property for 
+    the following properties: */
+    grid-column: initial;
+  }
+
+  .home__img {
+    /* The order property specifies the order of a flexible item relative 
+    to the rest of the flexible items inside the same container. Note:
+     If the element is not a flexible item, the order property has no effect. */
+
+    /* // default value is 0  */
+    order: 1;
+    justify-self: center;
+    animation: moveInRight 3s; 
+  }
+
+  .about__container,
+  .skills__container,
+  .portfolio__content,
+  .project__container,
+  .contact__container,
+  .footer__container {
+    /* first num speciefies legnth?  */
+    /* The <flex> CSS data type denotes a flexible length within a grid container. It is used in grid-template-columns, grid-template-rows and other related properties. */
+    /* will make section left and right */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualification__sections {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+}
+
+/* // everything bigger 768 px */
+@media screen and (min-width: 768px) {
+  .container {
+    /* left and right margin are automatically set by the browser based on the container,
+     to make element centered. */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 6rem 0 2rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: 4rem;
+  }
+
+  .header {
+    /* header should be top */
+    top: 0;
+    /* Der Wert initial repräsentiert einen vom Browser vorgegebenen Standardwert.
+     Der Wert ist in jeder CSS Eigenschaft verfügbar, hat aber verschiedene Auswirkungen. */
+    bottom: initial;
+  }
+  .header,
+  .main,
+  .footer__container {
+    padding: 0 1rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 1rem;
+  }
+
+  /* hide the icons except change theme icon */
+  .nav__icon,
+  .nav__close,
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 2rem;
+  }
+
+  .nav__menu {
+    margin-left: auto;
+  }
+  .change-theme {
+    margin: 0;
+  }
+
+  .home__container {
+    row-gap: 5rem;
+  }
+
+  .home__content {
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+  }
+
+  .home__blob {
+    width: 270px;
+  }
+
+  /* // show click to scroll */
+  .home__scroll {
+    display: block;
+  }
+  .home__scroll-button {
+    margin-left: 3rem;
+  }
+
+  .about__container {
+    column-gap: 5rem;
+  }
+  .about__img {
+    width: 350px;
+  }
+
+  .about__description {
+    /* (left side) */
+    text-align: initial;
+  }
+
+  .about__info {
+    /* The justify-content property aligns the flexible container's items when the 
+    items do not use all available space on the main-axis (horizontally). 
+    Tip: Use the align-items property to align the items vertically. */
+    justify-content: space-between;
+  }
+
+  .about__buttons {
+    justify-content: initial;
+  }
+
+  .qualification__tabs {
+    justify-content: center;
+  }
+  .qualification__button {
+    margin: 0 var(--mb-1);
+  }
+  .qualification__sections {
+    grid-template-columns: 0.5fr;
+  }
+
+  .services__container {
+    /* number of columns in a GRID ROW */
+    grid-template-columns: repeat(3, 218px);
+    justify-content: center;
+  }
+  .services__icon {
+    font-size: 2rem;
+  }
+
+  .services__content {
+    padding: 6rem 0 2rem 2.5rem;
+  }
+
+  .services__modal-content {
+    width: 450px;
+  }
+
+  .portfolio__img {
+    width: 320px;
+  }
+  .portfolio__content {
+    align-items: center;
+  }
+
+  .project {
+    text-align: initial;
+  }
+  .project__bg {
+    background: none;
+  }
+
+  .project__container {
+    background-color: var(--first-color-second);
+    border-radius: 1rem;
+    padding: 3rem 2.5rem 0;
+    grid-template-columns: 1fr max-content;
+    column-gap: 3rem;
+  }
+
+  .project__data {
+    padding-top: 0.8rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__bg {
+    padding: 3rem 0 3.5rem;
+  }
+  .footer__links {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+  .footer__socials {
+    justify-self: flex-end;
+  }
+
+  .footer__copy {
+    margin-top: 4.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .header,
+  .main,
+  .footer__container {
+    padding: 0;
+  }
+  .home__blob {
+    width: 320;
+  }
+
+  .home__social {
+    transform: translateX(-6rem);
+  }
+}
+
+/* ------------- REUSABLE ANIMATIONS ----------  */
+@keyframes changingTextGradient {
+  0%{
+    background: -webkit-linear-gradient(#36D1DC,#5B86E5);
+    text-shadow: 3px 3px 8px var(--text-shadow);
+    -webkit-background-clip: text;
+    /* make the text transparent so the background can gleam */
+    -webkit-text-fill-color: transparent; 
+    box-shadow: 8px 5px 7px rgb(124, 15, 163);
+  }
+  35%{
+    background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
+    -webkit-background-clip: text;
+    /* make the text transparent so the background can gleam */
+    -webkit-text-fill-color: transparent; 
+    box-shadow: 8px 5px 7px rgb(8, 128, 183);
+
+  }
+  70%{
+    background: -webkit-linear-gradient(#159957, #155799);
+    -webkit-background-clip: text;
+    /* make the text transparent so the background can gleam */
+    -webkit-text-fill-color: transparent; 
+    box-shadow: 8px -5px 7px rgb(8, 128, 183);
+  }
+  100%{
+    background: -webkit-linear-gradient(#c0392b,#8e44ad);
+    -webkit-background-clip: text;
+    /* make the text transparent so the background can gleam */
+    -webkit-text-fill-color: transparent; 
+    box-shadow: -8px -5px 7px rgb(227, 119, 10);
+  }
+}
+
+@keyframes moveInLeft {
+  /* specify each moment of time - what should happen */
+  /* start */
+  0% {
+    /* // beginning of animation the element should be invisible
+       for the broswer performance -> 
+       animate only ever two different properties: opacity, transform */
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+  /* intermediate step */
+  35% {
+    transform: translateX(1rem);
+  }
+
+  60% {
+  }
+  100% {
+    /* should look like before the animation starts (now) */
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0; 
+  }
+  /* intermediate step */
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+
+  /* end state of the animation */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
