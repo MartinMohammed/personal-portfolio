@@ -1,0 +1,23 @@
+{
+  "name": "martinportfolio",
+  "version": "1.0.0",
+  "description": "## Demo:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinMohammed/MyProfessionalPortfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinMohammed/MyProfessionalPortfolio/issues"
+  },
+  "homepage": "https://github.com/MartinMohammed/MyProfessionalPortfolio#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

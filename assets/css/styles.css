@@ -9,7 +9,6 @@
   /*========== Colors ==========*/
   /* Change favorite color */
   /* hue is a degree on the color wheel from 0 to 360 */
-  /* like a variable */
   --hue-color: 228; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL = 
@@ -67,7 +66,7 @@
   --z-modal: 1000;
 
   /* -------------------------- */
-  --text-shadow: #00DDFF; 
+  --text-shadow: #00ddff;
 }
 
 /* Font size for large devices,
@@ -87,7 +86,8 @@
 }
 
 /*========== Variables Dark theme ==========*/
-/* Selects all <body> elements with class="intro" */
+/* A different theme = different colors to create contrast.
+ Put some new variables values for the namespace (override them) */
 body.dark-theme {
   /* HSL COLOR MODE - from above } changed values */
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
@@ -96,10 +96,11 @@ body.dark-theme {
   --input-color: hsl(var(--hue-color), 29%, 16%);
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --container-color: hsl(var(--hue-color), 29%, 16%);
+  --blob-color: hsl(var(--hue-color), 100%, 65%);
 
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-  --text-shadow: black; 
+  --text-shadow: black;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -368,7 +369,6 @@ img {
 
 .home__blob-img {
   width: 170px;
-
 }
 
 .home__data {
@@ -376,7 +376,7 @@ img {
      contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and 
      inline-end edge of its grid area. */
   grid-column: 1/3;
-  animation: moveInLeft 3s; 
+  animation: moveInLeft 3s;
 }
 
 .home__title {
@@ -384,11 +384,11 @@ img {
   text-align: center;
   margin-bottom: 10px;
   font-size: var(30px);
-  background: -webkit-linear-gradient(#16BFFD,#CB3066);
+  background: -webkit-linear-gradient(#16bffd, #cb3066);
   /* clip all the background except for the area behnind  the text */
   -webkit-background-clip: text;
   /* make the text transparent so the background can gleam */
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
 
   animation: changingTextGradient 3s linear infinite alternate;
 }
@@ -608,67 +608,68 @@ img {
 
 /* --------------------------- // ACCORDION SKILLS ---------------------------  */
 /* ---------------------- SKILLS BAR FRONTENT ---------------------- */
-.skills__html {
+
+.skills__typescript {
   /* access horizontal rule and make width smaller */
   width: 90%;
-}
-
-.skills__css {
-  /* access horizontal rule and make width smaller */
-  width: 80%;
-}
-
-.skills__js {
-  /* access horizontal rule and make width smaller */
-  width: 85%;
 }
 
 .skills__react {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 88%;
+}
+
+.skills__redux {
+  /* access horizontal rule and make width smaller */
+  width: 84%;
+}
+
+.skills__sass {
+  /* access horizontal rule and make width smaller */
+  width: 91%;
 }
 
 /* ---------------------- SKILLS BAR BACKEND ---------------------- */
-.skills__typescript {
-  /* access horizontal rule and make width smaller */
-  width: 85%;
-}
 
 .skills__node {
   /* access horizontal rule and make width smaller */
-  width: 90%;
+  width: 91%;
 }
 
-.skills__mongo{
+.skills__nextjs {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 87%;
+}
+
+.skills__mongo {
+  /* access horizontal rule and make width smaller */
+  width: 84%;
 }
 
 .skills__python {
   /* access horizontal rule and make width smaller */
-  width: 80%;
+  width: 82%;
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
 .skills__figma {
   /* access horizontal rule and make width smaller */
-  width: 90%;
+  width: 89%;
 }
 
 .skills__photoshop {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 84%;
 }
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
-.skills__swift{
-  width: 35%; 
+.skills__swift {
+  width: 39%;
 }
-.skills__react-native{
-  width: 30%; 
+.skills__react-native {
+  width: 32%;
 }
-
 
 /* Selects all elements with name2[.skills__list] that is a descendant 
 of an element with name1[.skills__close] */
@@ -693,9 +694,6 @@ of an element with name1[.skills__close] */
   transform: rotate(-180deg);
 }
 
-
-
-
 /* =================== QUALIFICATION ====================*/
 
 .qualification__tabs {
@@ -714,7 +712,7 @@ of an element with name1[.skills__close] */
   color: var(--first-color);
 }
 
-.qualification__button-active{
+.qualification__button-active {
   box-shadow: 2px 2px 10px gold;
 }
 
@@ -1280,7 +1278,7 @@ present on almost all popular PC platforms including Windows,
     /* // default value is 0  */
     order: 1;
     justify-self: center;
-    animation: moveInRight 3s; 
+    animation: moveInRight 3s;
   }
 
   .about__container,
@@ -1493,34 +1491,33 @@ present on almost all popular PC platforms including Windows,
 
 /* ------------- REUSABLE ANIMATIONS ----------  */
 @keyframes changingTextGradient {
-  0%{
-    background: -webkit-linear-gradient(#36D1DC,#5B86E5);
+  0% {
+    background: -webkit-linear-gradient(#36d1dc, #5b86e5);
     text-shadow: 3px 3px 8px var(--text-shadow);
     -webkit-background-clip: text;
     /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     box-shadow: 8px 5px 7px rgb(124, 15, 163);
   }
-  35%{
+  35% {
     background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
     -webkit-background-clip: text;
     /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     box-shadow: 8px 5px 7px rgb(8, 128, 183);
-
   }
-  70%{
+  70% {
     background: -webkit-linear-gradient(#159957, #155799);
     -webkit-background-clip: text;
     /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     box-shadow: 8px -5px 7px rgb(8, 128, 183);
   }
-  100%{
-    background: -webkit-linear-gradient(#c0392b,#8e44ad);
+  100% {
+    background: -webkit-linear-gradient(#c0392b, #8e44ad);
     -webkit-background-clip: text;
     /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     box-shadow: -8px -5px 7px rgb(227, 119, 10);
   }
 }
@@ -1552,7 +1549,7 @@ present on almost all popular PC platforms including Windows,
 @keyframes moveInRight {
   0% {
     transform: translateX(10rem);
-    opacity: 0; 
+    opacity: 0;
   }
   /* intermediate step */
   80% {
