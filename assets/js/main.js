@@ -174,6 +174,11 @@ var swiperTestimonial = new Swiper(".testimonial__container", {
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/**
+ * Calculating how tall and wide a section like #about is
+ * to determine when to highlight the nav link based
+ * on the scrolling behaviour of the user
+ */
 // get all sections saved in array
 const sections = document.querySelectorAll("section[id]");
 
