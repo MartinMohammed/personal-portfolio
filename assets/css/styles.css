@@ -648,7 +648,7 @@ img {
 
 .skills__python {
   /* access horizontal rule and make width smaller */
-  width: 82%;
+  width: 89%;
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
@@ -665,7 +665,7 @@ img {
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
 .skills__swift {
-  width: 39%;
+  width: 85%;
 }
 .skills__react-native {
   width: 32%;
