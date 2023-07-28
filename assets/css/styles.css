@@ -619,7 +619,7 @@ img {
   width: 88%;
 }
 
-.skills__redux {
+.skills__svelte {
   /* access horizontal rule and make width smaller */
   width: 84%;
 }
@@ -652,15 +652,24 @@ img {
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
-.skills__figma {
+.skills__aws {
   /* access horizontal rule and make width smaller */
-  width: 89%;
+  width: 85%;
 }
 
-.skills__photoshop {
+.skills__microservices {
   /* access horizontal rule and make width smaller */
-  width: 84%;
+  width: 80%;
 }
+.skills__ci-cd {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
+}
+.skills__docker-kubernetes {
+  /* access horizontal rule and make width smaller */
+  width: 80%;
+}
+
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
