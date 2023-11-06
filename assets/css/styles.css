@@ -611,12 +611,17 @@ img {
 
 .skills__typescript {
   /* access horizontal rule and make width smaller */
-  width: 90%;
+  width: 95%;
 }
 
 .skills__react {
   /* access horizontal rule and make width smaller */
-  width: 88%;
+  width: 90%;
+}
+
+.skills__angular {
+  /* access horizontal rule and make width smaller */
+  width: 85%;
 }
 
 .skills__svelte {
@@ -641,14 +646,13 @@ img {
   width: 87%;
 }
 
-.skills__mongo {
+.skills__sql {
   /* access horizontal rule and make width smaller */
-  width: 84%;
+  width: 87%;
 }
-
-.skills__python {
+.skills__no-sql {
   /* access horizontal rule and make width smaller */
-  width: 89%;
+  width: 87%;
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
@@ -659,25 +663,34 @@ img {
 
 .skills__microservices {
   /* access horizontal rule and make width smaller */
-  width: 80%;
+  width: 85%;
 }
 .skills__ci-cd {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 90%;
 }
 .skills__docker-kubernetes {
   /* access horizontal rule and make width smaller */
-  width: 80%;
+  width: 95%;
 }
 
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
-.skills__swift {
-  width: 85%;
+.skills__python {
+  width: 95%;
 }
-.skills__react-native {
-  width: 32%;
+.skills__pandas-numpy {
+  width: 95%;
+}
+.skills__tensorflow {
+  width: 92%;
+}
+.skills__langchain-llm-applications {
+  width: 91%;
+}
+.skills__matplotlib-seaborn {
+  width: 97%;
 }
 
 /* Selects all elements with name2[.skills__list] that is a descendant 
