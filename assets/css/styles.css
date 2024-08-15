@@ -364,7 +364,7 @@ img {
 .home__blob {
   width: 200px;
   /* // it will fill the svg  */
-  fill: var(--blob-color);
+  fill: var(--body-color);
 }
 
 .home__blob-img {
@@ -623,6 +623,10 @@ img {
   /* access horizontal rule and make width smaller */
   width: 85%;
 }
+.skills__vue {
+  /* access horizontal rule and make width smaller */
+  width: 92%;
+}
 
 .skills__svelte {
   /* access horizontal rule and make width smaller */
@@ -658,12 +662,22 @@ img {
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
 .skills__aws {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 92%;
+}
+
+.skills__azure {
+  /* access horizontal rule and make width smaller */
+  width: 88%;
+}
+
+.skills__gcp {
+  /* access horizontal rule and make width smaller */
+  width: 83%;
 }
 
 .skills__microservices {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 87%;
 }
 .skills__ci-cd {
   /* access horizontal rule and make width smaller */
@@ -673,7 +687,6 @@ img {
   /* access horizontal rule and make width smaller */
   width: 95%;
 }
-
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
