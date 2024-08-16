@@ -640,9 +640,19 @@ img {
 
 /* ---------------------- SKILLS BAR BACKEND ---------------------- */
 
-.skills__node {
+.skills__node-and-express-js {
   /* access horizontal rule and make width smaller */
-  width: 91%;
+  width: 94%;
+}
+
+.skills__django-and-flask {
+  /* access horizontal rule and make width smaller */
+  width: 92%;
+}
+
+.skills__rest-apis-and-graphql {
+  /* access horizontal rule and make width smaller */
+  width: 93%;
 }
 
 .skills__nextjs {
@@ -652,11 +662,11 @@ img {
 
 .skills__sql {
   /* access horizontal rule and make width smaller */
-  width: 87%;
+  width: 92%;
 }
 .skills__no-sql {
   /* access horizontal rule and make width smaller */
-  width: 87%;
+  width: 91%;
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
@@ -679,13 +689,20 @@ img {
   /* access horizontal rule and make width smaller */
   width: 87%;
 }
+
+.skills__docker-kubernetes {
+  /* access horizontal rule and make width smaller */
+  width: 95%;
+}
+
 .skills__ci-cd {
   /* access horizontal rule and make width smaller */
   width: 90%;
 }
-.skills__docker-kubernetes {
+
+.skills__iac {
   /* access horizontal rule and make width smaller */
-  width: 95%;
+  width: 92%;
 }
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
@@ -693,17 +710,54 @@ img {
 .skills__python {
   width: 95%;
 }
-.skills__pandas-numpy {
-  width: 95%;
+.skills__java {
+  width: 92%;
 }
+.skills__c-and-cpp {
+  width: 93%;
+}
+.skills__c-sharp {
+  width: 89%;
+}
+.skills__swift {
+  width: 89%;
+}
+
+/* Data Science */
+
 .skills__tensorflow {
   width: 92%;
 }
-.skills__langchain-llm-applications {
+.skills__pytorch {
+  width: 89%;
+}
+.skills__llms-and-rag {
   width: 91%;
 }
-.skills__matplotlib-seaborn {
-  width: 97%;
+.skills__langchain-multi-agent-applications {
+  width: 93%;
+}
+
+/* Data Engineering */
+
+.skills__apache-spark {
+  width: 95%;
+}
+.skills__apache-flink {
+  width: 92%;
+}
+.skills__apache-kafka-and-confluent-cloud {
+  width: 93%;
+}
+.skills__apache-airflow {
+  width: 96%;
+}
+.skills__snowflake {
+  width: 94%;
+}
+
+.skills__etl-and-elt-using-aws-glue {
+  width: 95%;
 }
 
 /* Selects all elements with name2[.skills__list] that is a descendant 
