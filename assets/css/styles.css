@@ -381,16 +381,33 @@ img {
 
 .home__title {
   border-radius: 50px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
-  font-size: var(30px);
-  background: -webkit-linear-gradient(#16bffd, #cb3066);
-  /* clip all the background except for the area behnind  the text */
+  font-size: var(--h2-font-size);
+  background: linear-gradient(
+    -90deg,
+    #16bffd,
+    #5b9df2,
+    #ff9a44,
+    #cb3066,
+    #ff4b4b
+  );
+  background-size: 200% 200%;
   -webkit-background-clip: text;
-  /* make the text transparent so the background can gleam */
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease-in-out infinite;
+}
 
-  animation: changingTextGradient 3s linear infinite alternate;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .home__subtitle {
@@ -1579,38 +1596,6 @@ present on almost all popular PC platforms including Windows,
 }
 
 /* ------------- REUSABLE ANIMATIONS ----------  */
-@keyframes changingTextGradient {
-  0% {
-    background: -webkit-linear-gradient(#36d1dc, #5b86e5);
-    text-shadow: 3px 3px 8px var(--text-shadow);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px 5px 7px rgb(124, 15, 163);
-  }
-  35% {
-    background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px 5px 7px rgb(8, 128, 183);
-  }
-  70% {
-    background: -webkit-linear-gradient(#159957, #155799);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px -5px 7px rgb(8, 128, 183);
-  }
-  100% {
-    background: -webkit-linear-gradient(#c0392b, #8e44ad);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: -8px -5px 7px rgb(227, 119, 10);
-  }
-}
-
 @keyframes moveInLeft {
   /* specify each moment of time - what should happen */
   /* start */
@@ -1647,19 +1632,6 @@ present on almost all popular PC platforms including Windows,
 
   100% {
     transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-
-  /* end state of the animation */
-  100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
