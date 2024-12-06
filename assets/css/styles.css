@@ -364,7 +364,7 @@ img {
 .home__blob {
   width: 200px;
   /* // it will fill the svg  */
-  fill: var(--blob-color);
+  fill: var(--body-color);
 }
 
 .home__blob-img {
@@ -381,16 +381,33 @@ img {
 
 .home__title {
   border-radius: 50px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
-  font-size: var(30px);
-  background: -webkit-linear-gradient(#16bffd, #cb3066);
-  /* clip all the background except for the area behnind  the text */
+  font-size: var(--h2-font-size);
+  background: linear-gradient(
+    -90deg,
+    #16bffd,
+    #5b9df2,
+    #ff9a44,
+    #cb3066,
+    #ff4b4b
+  );
+  background-size: 200% 200%;
   -webkit-background-clip: text;
-  /* make the text transparent so the background can gleam */
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease-in-out infinite;
+}
 
-  animation: changingTextGradient 3s linear infinite alternate;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .home__subtitle {
@@ -623,6 +640,10 @@ img {
   /* access horizontal rule and make width smaller */
   width: 85%;
 }
+.skills__vue {
+  /* access horizontal rule and make width smaller */
+  width: 92%;
+}
 
 .skills__svelte {
   /* access horizontal rule and make width smaller */
@@ -636,9 +657,19 @@ img {
 
 /* ---------------------- SKILLS BAR BACKEND ---------------------- */
 
-.skills__node {
+.skills__node-and-express-js {
   /* access horizontal rule and make width smaller */
-  width: 91%;
+  width: 94%;
+}
+
+.skills__django-and-flask {
+  /* access horizontal rule and make width smaller */
+  width: 92%;
+}
+
+.skills__rest-apis-and-graphql {
+  /* access horizontal rule and make width smaller */
+  width: 93%;
 }
 
 .skills__nextjs {
@@ -648,49 +679,102 @@ img {
 
 .skills__sql {
   /* access horizontal rule and make width smaller */
-  width: 87%;
+  width: 92%;
 }
 .skills__no-sql {
   /* access horizontal rule and make width smaller */
-  width: 87%;
+  width: 91%;
 }
 
 /* ---------------------- SKILLS BAR DESIGN ---------------------- */
 .skills__aws {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 92%;
+}
+
+.skills__azure {
+  /* access horizontal rule and make width smaller */
+  width: 88%;
+}
+
+.skills__gcp {
+  /* access horizontal rule and make width smaller */
+  width: 83%;
 }
 
 .skills__microservices {
   /* access horizontal rule and make width smaller */
-  width: 85%;
+  width: 87%;
 }
-.skills__ci-cd {
-  /* access horizontal rule and make width smaller */
-  width: 90%;
-}
+
 .skills__docker-kubernetes {
   /* access horizontal rule and make width smaller */
   width: 95%;
 }
 
+.skills__ci-cd {
+  /* access horizontal rule and make width smaller */
+  width: 90%;
+}
+
+.skills__iac {
+  /* access horizontal rule and make width smaller */
+  width: 92%;
+}
 
 /* ---------------------- SKILLS BAR Mobile Development ---------------------- */
 
 .skills__python {
   width: 95%;
 }
-.skills__pandas-numpy {
-  width: 95%;
+.skills__java {
+  width: 92%;
 }
+.skills__c-and-cpp {
+  width: 93%;
+}
+.skills__c-sharp {
+  width: 89%;
+}
+.skills__swift {
+  width: 89%;
+}
+
+/* Data Science */
+
 .skills__tensorflow {
   width: 92%;
 }
-.skills__langchain-llm-applications {
+.skills__pytorch {
+  width: 89%;
+}
+.skills__llms-and-rag {
   width: 91%;
 }
-.skills__matplotlib-seaborn {
-  width: 97%;
+.skills__langchain-multi-agent-applications {
+  width: 93%;
+}
+
+/* Data Engineering */
+
+.skills__apache-spark {
+  width: 95%;
+}
+.skills__apache-flink {
+  width: 92%;
+}
+.skills__apache-kafka-and-confluent-cloud {
+  width: 93%;
+}
+.skills__apache-airflow {
+  width: 96%;
+}
+.skills__snowflake {
+  width: 94%;
+}
+
+.skills__etl-and-elt-using-aws-glue {
+  width: 95%;
 }
 
 /* Selects all elements with name2[.skills__list] that is a descendant 
@@ -1512,38 +1596,6 @@ present on almost all popular PC platforms including Windows,
 }
 
 /* ------------- REUSABLE ANIMATIONS ----------  */
-@keyframes changingTextGradient {
-  0% {
-    background: -webkit-linear-gradient(#36d1dc, #5b86e5);
-    text-shadow: 3px 3px 8px var(--text-shadow);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px 5px 7px rgb(124, 15, 163);
-  }
-  35% {
-    background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px 5px 7px rgb(8, 128, 183);
-  }
-  70% {
-    background: -webkit-linear-gradient(#159957, #155799);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: 8px -5px 7px rgb(8, 128, 183);
-  }
-  100% {
-    background: -webkit-linear-gradient(#c0392b, #8e44ad);
-    -webkit-background-clip: text;
-    /* make the text transparent so the background can gleam */
-    -webkit-text-fill-color: transparent;
-    box-shadow: -8px -5px 7px rgb(227, 119, 10);
-  }
-}
-
 @keyframes moveInLeft {
   /* specify each moment of time - what should happen */
   /* start */
@@ -1580,19 +1632,6 @@ present on almost all popular PC platforms including Windows,
 
   100% {
     transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-
-  /* end state of the animation */
-  100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
